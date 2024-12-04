@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- création élément parent -->
+    
+    <div id="wrapperTwo"></div>
+    <div id="wrapper"></div>
+
+    <script>
+        //création d'un HTMLElement 
+        const carreInitial = document.createElement("div");
+        //récupération de l'élément parent 
+        const wrapper = document.getElementById("wrapper");
+        //ajout de l'élément enfant nouvellement créé à l'élément parent 
+        wrapper.appendChild(carreInitial);
+        //ajout des propriétés CSS au carré pour qu'il apparaisse
+        carreInitial.classList.add("carreInitial")
+
+        //création d'une boucle pour créer 4 nouveaux carrés (clône) à partir du carré initial 
+        for(let i=1;i<=4;i++){
+            let newCarre = carreInitial.cloneNode();
+            newCarre.classList.add("newCarre")
+            const wrapperTwo = document.getElementById("wrapperTwo")
+            wrapperTwo.appendChild(newCarre)
+        }
+
+    </script>
+</body>
+</html>

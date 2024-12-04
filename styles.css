@@ -1,4 +1,8 @@
-
+/* EXERCICE 1 */
+#wrapper{
+    display: flex;
+    justify-content: center;
+}
 .carre{
     width:200px;
     height:200px;
@@ -8,4 +12,23 @@
     text-align: center;
     margin: auto;
     line-height:200px;
+}
+
+/* EXERCICE 2 */
+#wrapperTwo{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    gap:10px
+}
+
+.carreInitial{
+    width:200px;
+    height:200px;
+    background-color:goldenrod;
+    margin-top:10px;
+}
+
+.newCarre{
+    background-color: rgb(41, 113, 113);
 }
