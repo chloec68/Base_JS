@@ -1,0 +1,9 @@
+.carre{
+    width:200px;
+    height:200px;
+    background-color: brown;
+    font-family:'Lucida Sans Regular';
+    font-size: 3em;
+    text-align: center;
+    margin: auto;
+}
