@@ -1,3 +1,4 @@
+
 .carre{
     width:200px;
     height:200px;
@@ -6,4 +7,5 @@
     font-size: 3em;
     text-align: center;
     margin: auto;
+    line-height:200px;
 }
