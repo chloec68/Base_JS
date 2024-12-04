@@ -25,10 +25,7 @@
 .carreInitial{
     width:200px;
     height:200px;
-    background-color:goldenrod;
     margin-top:10px;
+    background-color:goldenrod;
 }
 
-.newCarre{
-    background-color: rgb(41, 113, 113);
-}

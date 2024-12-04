@@ -20,15 +20,36 @@
         //ajout de l'élément enfant nouvellement créé à l'élément parent 
         wrapper.appendChild(carreInitial);
         //ajout des propriétés CSS au carré pour qu'il apparaisse
-        carreInitial.classList.add("carreInitial")
+        carreInitial.classList.add("carreInitial");
 
-        //création d'une boucle pour créer 4 nouveaux carrés (clône) à partir du carré initial 
+        //récupérer les propriétés de l'objet 
+        const carreInitialStyles = window.getComputedStyle(carre,null)
+        const carreInitialBackgroundColor = carreInitialStyles.getPropertyValue("background-color");
+        const carreInitialTextColor = carreInitialStyles.getPropertyValue("color");
+        const carreInitialHeight = carreInitialStyles.getPropertyValue("height");
+        const carreInitialWidth = carreInitialStyles.getPropertyValue("width");
+        const carreInitialFontFamily = carreInitialStyles.getPropertyValue("font-family");
+        const carreInitialFontSize = carreInitialStyles.getPropertyValue("font-size");
+        const carreInitialClassName = carreInitialStyles.getAttribute("class");
+        const carreInitialClass = carreInitialStyles.getAttributeNames();
+
+        //destructuration de l'objet : 
+        carreInitial={
+            
+        }
+     
+
+        //création d'une boucle pour créer 4 nouveaux carrés (clônes) à partir du carré initial 
         for(let i=1;i<=4;i++){
             let newCarre = carreInitial.cloneNode();
-            newCarre.classList.add("newCarre")
+            // newCarre.classList.add("carreInitial")
             const wrapperTwo = document.getElementById("wrapperTwo")
             wrapperTwo.appendChild(newCarre)
         }
+
+        // object.assign(target,source)
+
+        // console.log(typeof(carreInitial)) => objet => destructurer l'objet
 
     </script>
 </body>
