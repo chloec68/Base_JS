@@ -22,29 +22,14 @@
         //ajout des propriétés CSS au carré pour qu'il apparaisse
         carreInitial.classList.add("carreInitial");
 
-        //récupérer les propriétés de l'objet 
-        const carreInitialStyles = window.getComputedStyle(carre,null)
-        const carreInitialBackgroundColor = carreInitialStyles.getPropertyValue("background-color");
-        const carreInitialTextColor = carreInitialStyles.getPropertyValue("color");
-        const carreInitialHeight = carreInitialStyles.getPropertyValue("height");
-        const carreInitialWidth = carreInitialStyles.getPropertyValue("width");
-        const carreInitialFontFamily = carreInitialStyles.getPropertyValue("font-family");
-        const carreInitialFontSize = carreInitialStyles.getPropertyValue("font-size");
-        const carreInitialClassName = carreInitialStyles.getAttribute("class");
-        const carreInitialClass = carreInitialStyles.getAttributeNames();
-
-        //destructuration de l'objet : 
-        carreInitial={
-            
-        }
-     
-
         //création d'une boucle pour créer 4 nouveaux carrés (clônes) à partir du carré initial 
         for(let i=1;i<=4;i++){
             let newCarre = carreInitial.cloneNode();
-            // newCarre.classList.add("carreInitial")
+            newCarre.classList.remove("carreInitial")
+            newCarre.classList.add("newCarre")
             const wrapperTwo = document.getElementById("wrapperTwo")
             wrapperTwo.appendChild(newCarre)
+            
         }
 
         // object.assign(target,source)
