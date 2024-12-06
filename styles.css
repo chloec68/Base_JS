@@ -25,13 +25,63 @@
 .carreInitial{
     width:200px;
     height:200px;
-    margin-top:10px;
+    margin:10px;
+}
+
+.backgroundInitial{
     background-color:goldenrod;
 }
 
-.newCarre{
+.backgroundRouge{
+    background-color:rgb(218, 32, 32);
+    text-align: center;
+    color: white;
+    line-height:200px;
+    
+}
+.backgroundVert{
+    background-color:rgb(48, 218, 32);
+    text-align: center;
+    color: white;
+    line-height:200px;
+}
+
+.backgroundBleu{
+    background-color:rgb(32, 88, 218);
+    text-align: center;
+    color: white;
+    line-height:200px;
+}
+
+.backgroundViolet{
+    background-color:rgb(92, 7, 132);
+    text-align: center;
+    color: white;
+    line-height:200px;
+}
+
+/* EXERCICE 3 */
+.carreExo3{
     width:200px;
     height:200px;
-    margin-top:10px;
-    background-color: blue;
+    background-color: rgb(42, 165, 89);
+    margin:10px;
+    text-align: center;
 }
+
+.wrapper3{
+    width : 500px;
+    display: flex;
+    flex-wrap: wrap;
+    margin:auto
+}
+
+.transform{
+    transform:scale(-10%) rotate(10deg);
+    background-color: red;
+}
+
+
+
+
+

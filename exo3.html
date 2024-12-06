@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Exercice 3</title>
+</head>
+
+<body>
+    <div class="wrapper3">
+        <div class="carreExo3"></div>
+        <div class="carreExo3"></div>
+        <div class="carreExo3"></div>
+        <div class="carreExo3"></div>
+    </div>
+
+    <script>
+        const carre = document.querySelector(".carreExo3");
+        const allCarres = document.querySelectorAll(".carreExo3");
+
+        for(let i=1; i>=5; i++){
+            allCarres[i].innerText=i
+            console.log(i)
+        }
+
+        allCarres.forEach(carre => {
+            carre.addEventListener('click',function(){
+                if(carre.classList.contains("transform")){
+                    carre.classList.remove("transform")
+                }else{
+                    carre.classList.add("transform")
+                }
+            })
+        });
+    </script>
+
+</body>
+</html>
+
+

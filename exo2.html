@@ -20,22 +20,70 @@
         //ajout de l'élément enfant nouvellement créé à l'élément parent 
         wrapper.appendChild(carreInitial);
         //ajout des propriétés CSS au carré pour qu'il apparaisse
-        carreInitial.classList.add("carreInitial");
+        carreInitial.classList.add("carreInitial", "backgroundInitial");
 
-        //création d'une boucle pour créer 4 nouveaux carrés (clônes) à partir du carré initial 
-        for(let i=1;i<=4;i++){
-            let newCarre = carreInitial.cloneNode();
-            newCarre.classList.remove("carreInitial")
-            newCarre.classList.add("newCarre")
-            const wrapperTwo = document.getElementById("wrapperTwo")
-            wrapperTwo.appendChild(newCarre)
+        //création de 4 nouveaux carrés de différentes couleurs 
+  
+        let carreRouge = carreInitial.cloneNode();
+        carreRouge.classList.remove("backgroundInitial");
+        carreRouge.classList.add("backgroundRouge");
+        const wrapperTwo = document.getElementById("wrapperTwo")
+        wrapperTwo.appendChild(carreRouge);
+
+        let carreVert = carreInitial.cloneNode();
+        carreVert.classList.remove("backgroundInitial");
+        carreVert.classList.add("backgroundVert");
+        wrapperTwo.appendChild(carreVert);
+
+        let carreBleu = carreInitial.cloneNode();
+        carreBleu.classList.remove("backgroundInitial");
+        carreBleu.classList.add("backgroundBleu");
+        wrapperTwo.appendChild(carreBleu);
+
+        let carreViolet = carreInitial.cloneNode();
+        carreViolet.classList.remove("backgroundInitial");
+        carreViolet.classList.add("backgroundViolet");
+        wrapperTwo.appendChild(carreViolet);
+
+        
+        // lorsque je clique sur un de ces carrés, le carré initial prend ses propriétés 
+
+        carreRouge.addEventListener('click',function(){
+
+            const carreProp = window.getComputedStyle(carreRouge,null)
+            const carreBKC = carreProp.getPropertyValue("background-color");
+            carreInitial.classList.add("backgroundRouge");
+            carreInitial.innerText=carreBKC;
+        })
+        
+        carreVert.addEventListener('click',function(){
+
+            const carreProp = window.getComputedStyle(carreVert,null)
+            const carreBKC = carreProp.getPropertyValue("background-color");
+            carreInitial.innerText=carreBKC;
+            carreInitial.classList.add("backgroundVert");
             
-        }
+        })
 
-        // object.assign(target,source)
+        carreBleu.addEventListener('click',function(){
+            const carreProp = window.getComputedStyle(carreBleu,null)
+            const carreBKC = carreProp.getPropertyValue("background-color");
+            carreInitial.innerText=carreBKC;
+            carreInitial.classList.add("backgroundBleu");
+            
+        })
 
-        // console.log(typeof(carreInitial)) => objet => destructurer l'objet
+        carreViolet.addEventListener('click',function(){
+            const carreProp = window.getComputedStyle(carreViolet,null)
+            const carreBKC = carreProp.getPropertyValue("background-color");
+            carreInitial.innerText=carreBKC;
+            carreInitial.classList.add("backgroundViolet");
+        })
+
+        
+    
 
     </script>
 </body>
 </html>
+
