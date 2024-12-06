@@ -9,9 +9,51 @@
 </head>
 <body>
     <div class="wrapperExo4">
-        <div class="container darkBlue"><i class="fa-brands fa-facebook"></i></div>
-        <div class="container clearBlue"><i class="fa-brands fa-twitter"></i></div>
-        <div class="container red"><i class="fa-brands fa-instagram"></i></div>
+        <div id="text">Follow us!</div>
+            <div class="iElements">
+                <div class="container darkBlue"><i class="fa-brands fa-facebook"></i><p class="brandName">Facebook</p></div>
+                <div class="container clearBlue"><i class="fa-brands fa-twitter"></i><p class="brandName">Twitter</p></div>
+                <div class="container red"><i class="fa-brands fa-instagram"></i><p class="brandName">Instagram</p></div>
+            </div>
     </div>
+
+    <script>
+        const icones = document.querySelectorAll(".container")
+        console.log(icones)
+
+        const brandNames = document.querySelectorAll(".brandName")
+ 
+
+        icones.forEach(icone => {
+            addEventListener('click',function(){
+                // const wrapper = document.querySelector(".wrapperExo4")
+                // const styles = window.getComputedStyle(icone,null)
+                // const backgroundColor = styles.getPropertyValue("background-color")
+                // wrapper.classList.add("background-color")
+
+                if(icone.classList.contains("active")){
+                    icone.classList.remove("active")
+                    // brandName.style.display="none"
+                }else{
+                    icone.classList.add("active")
+                    // brandName.style.display="block"
+                }
+            })
+        });
+
+  
+      
+
+        brandNames.forEach(brandName=>{
+            addEventListener('click',function(){
+                if(brandName.style.display==="none"){
+                    brandName.style.display="block"
+                }else{
+                    brandName.style.display="none"
+                }
+            })
+        })
+
+    </script>
 </body>
 </html>

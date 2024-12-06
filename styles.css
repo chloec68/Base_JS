@@ -94,6 +94,7 @@ i{
     display: flex;
     justify-content: center;
     margin: auto 10px auto 10px;
+    
    
 }
 
@@ -110,12 +111,32 @@ i{
 }
 
 .wrapperExo4{
-    display: flex;
     width:300px;
     height:100px;
     justify-content: center;
     margin: auto;
     text-align: center;
     background-color: rgb(199, 198, 198);
+    display: grid;
 }
 
+#text{
+    margin:auto;
+    width:100%;
+    font-family: 'Lucida Sans';
+    color: white;
+}
+
+.iElements{
+    display: flex;
+}
+
+.active{
+    border-radius: 5px;
+    box-shadow: 1px 12px 7px -4px rgba(140, 140, 140, 1);
+}
+
+.brandName{
+    color:white;
+    display: none;
+}
