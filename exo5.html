@@ -69,7 +69,16 @@
         //SYSTEME DE FAVORIS
         etoiles.forEach(etoile => {
             etoile.addEventListener('click',function(){
-                
+                if(etoile.classList.contains("fa-regular")){
+                    etoile.classList.remove("fa-regular");
+                    etoile.classList.add("fa-solid");
+                    etoile.style.color="rgb(255, 234, 0)";
+                }else{
+                    etoile.classList.add("fa-regular");
+                    etoile.classList.remove("fa-solid")
+                    etoile.style.color="rgb(161, 159, 155)";
+                }
+          
             })
         });
 
