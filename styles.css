@@ -142,3 +142,38 @@ i{
     color: white;
 }
 
+/* EXERCICE 5 */
+
+body{
+    background-color: rgb(214, 213, 213);
+}
+
+#wrapperExo5{
+    display:block;
+}
+
+.conteneurExo5{
+    height : 100px; 
+    width: fit-content;
+    height: fit-content;
+    margin:10px auto 10px auto;
+    border:1px solid rgb(4, 0, 0);
+    padding:20px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.citation{
+    font-family:'Times New Roman', Times, serif;
+    font-style: italic;
+    font-size:18px;
+    text-align: center;
+}
+
+.auteur{
+    font-family:'Times New Roman', Times, serif;
+    font-style: normal;
+    font-size:16px;
+    text-align: end;
+    margin:10px;
+}

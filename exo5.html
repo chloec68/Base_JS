@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="quote.js"></script>
+    <title>Exercice 5</title>
+</head>
+<body>
+    <div id="wrapperExo5">
+        <div class="conteneurExo5">
+            <div class="citation">Exemple</div>
+            <div class="auteur">Exemple</div>
+        </div>
+        <div class="conteneurExo5">
+            <div class="citation">Exemple</div>
+            <div class="auteur">Exemple</div>
+        </div>
+        <div class="conteneurExo5">
+            <div class="citation">Exemple</div>
+            <div class="auteur">Exemple</div>
+        </div>
+        <div class="conteneurExo5">
+            <div class="citation">Exemple</div>
+            <div class="auteur">Exemple</div>
+        </div>
+        <div class="conteneurExo5">
+            <div class="citation">Exemple</div>
+            <div class="auteur">Exemple</div>
+        </div>
+    </div>
+
+    <script>
+        console.log(quotes)
+        console.log(quotes["Serges Karamazov"]) 
+        console.log(Object.keys(quotes))
+        console.log(Object.values(quotes))
+
+
+        const conteneurs = document.querySelectorAll(".conteneurExo5")
+        const auteurs = document.querySelectorAll(".auteur")
+        const citations = document.querySelectorAll(".citation")
+
+        citations.forEach((citation,index) => {
+            citation.innerText = Object.values(quotes)[index]
+        });
+        
+        auteurs.forEach((auteur,index) => {
+            auteur.innerText=Object.keys(quotes)[index]
+        });
+        
+    
+
+    
+    
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
