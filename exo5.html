@@ -53,18 +53,18 @@
         //RECUPERATION DES ELEMENTS PERTINENTS
         const auteurs = document.querySelectorAll(".auteur");
         const citations = document.querySelectorAll(".citation");
-        const etoiles = document.querySelectorAll(".fa-star")
+        const etoiles = document.querySelectorAll(".fa-star");
 
 
         //AFFICHAGE DES CITATIONS
         citations.forEach((citation,index) => {
             citation.innerText = Object.values(quotes)[index]
-        });
+        })
         
         //AFFICHAGE DES AUTEURS 
         auteurs.forEach((auteur,index) => {
             auteur.innerText=Object.keys(quotes)[index]
-        });
+        })
         
         //SYSTEME DE FAVORIS
         etoiles.forEach(etoile => {
@@ -78,9 +78,8 @@
                     etoile.classList.remove("fa-solid")
                     etoile.style.color="rgb(161, 159, 155)";
                 }
-          
             })
-        });
+        })
 
 
 

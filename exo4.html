@@ -31,16 +31,27 @@
                 if(icone.classList.contains("active")){
                     icone.classList.remove("active")
                     wrapper.style.backgroundColor = "rgb(203, 203, 214)"
-                    brand.style.display = "none";
+
+                    brand.classList.remove("clicked")
+                    console.log(brand)
                     
                 }else{
                     icone.classList.add("active")
                     wrapper.style.backgroundColor = "rgb(93, 85, 181)"
-                    brand.style.display = "inline";
-                 
+
+                    brand.classList.add("clicked")
+                    console.log(brand)
                 }
             })
         })
+
+        brands.forEach(brand => {
+            if(brand.classList.contains("clicked")){
+                brand.style.display = "block";
+            }else{
+                brand.style.display = "none";
+            }
+        });
     </script>
 </body>
 </html>

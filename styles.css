@@ -110,7 +110,6 @@ i{
 .brand{
     color:white;
     margin:5px auto auto auto;
-    display:none;
 }
 
 .facebook{
@@ -127,11 +126,11 @@ i{
 
 .wrapperExo4{
     width:300px;
-    height:100px;
+    height:150px;
     justify-content: center;
     margin: auto;
     text-align: center;
-    background-color: rgb(199, 198, 198);
+    background-color: rgb(233, 233, 233);
     display: grid;
 }
 
@@ -179,7 +178,7 @@ body{
 }
 
 .fa-star{
-    color:rgb(255, 234, 0);
+    color:rgb(161, 159, 155);
     margin:0px;
 }
 
