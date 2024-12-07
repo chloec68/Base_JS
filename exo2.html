@@ -9,76 +9,39 @@
 <body>
     <!-- création élément parent -->
     
-    <div id="wrapperTwo"></div>
-    <div id="wrapper"></div>
+   
+    <div id="wrapperEx2">
+        <div class="carreEx2 bleubck"></div>
+        <div class="carreEx2 rougebck"></div>
+        <div class="carreEx2 vertbck"></div>
+        <div class="carreEx2 yellowbck"></div>
+    </div>
+    <div id="wrapperBisEx2">
+        <div class="carreBtnEx2 neutre"></div>
+    </div>
 
     <script>
-        //création d'un HTMLElement 
-        const carreInitial = document.createElement("div");
-        //récupération de l'élément parent 
-        const wrapper = document.getElementById("wrapper");
-        //ajout de l'élément enfant nouvellement créé à l'élément parent 
-        wrapper.appendChild(carreInitial);
-        //ajout des propriétés CSS au carré pour qu'il apparaisse
-        carreInitial.classList.add("carreInitial", "backgroundInitial");
 
-        //création de 4 nouveaux carrés de différentes couleurs 
-  
-        let carreRouge = carreInitial.cloneNode();
-        carreRouge.classList.remove("backgroundInitial");
-        carreRouge.classList.add("backgroundRouge");
-        const wrapperTwo = document.getElementById("wrapperTwo")
-        wrapperTwo.appendChild(carreRouge);
-
-        let carreVert = carreInitial.cloneNode();
-        carreVert.classList.remove("backgroundInitial");
-        carreVert.classList.add("backgroundVert");
-        wrapperTwo.appendChild(carreVert);
-
-        let carreBleu = carreInitial.cloneNode();
-        carreBleu.classList.remove("backgroundInitial");
-        carreBleu.classList.add("backgroundBleu");
-        wrapperTwo.appendChild(carreBleu);
-
-        let carreViolet = carreInitial.cloneNode();
-        carreViolet.classList.remove("backgroundInitial");
-        carreViolet.classList.add("backgroundViolet");
-        wrapperTwo.appendChild(carreViolet);
-
-        
-        // lorsque je clique sur un de ces carrés, le carré initial prend ses propriétés 
-
-        carreRouge.addEventListener('click',function(){
-
-            const carreProp = window.getComputedStyle(carreRouge,null)
-            const carreBKC = carreProp.getPropertyValue("background-color");
-            carreInitial.classList.add("backgroundRouge");
-            carreInitial.innerText=carreBKC;
-        })
-        
-        carreVert.addEventListener('click',function(){
-
-            const carreProp = window.getComputedStyle(carreVert,null)
-            const carreBKC = carreProp.getPropertyValue("background-color");
-            carreInitial.innerText=carreBKC;
-            carreInitial.classList.add("backgroundVert");
-            
+        const carres = document.querySelectorAll(".carreEx2");
+        const carreBtn = document.querySelector(".carreBtnEx2");
+        // const carreBleu = document.querySelector(".bleubck");
+        // const carreRouge = document.querySelector(".rougebck");
+        // const carreVert = document.querySelector(".vertbck");
+        // const carreJaune = document.querySelector(".yellowbck");
+     
+        carres.forEach(carre => {
+            carre.addEventListener('click',function(){
+                const proprietes = window.getComputedStyle(carre,null);
+                const bck = proprietes.getPropertyValue("background-color");
+                carreBtn.innerText=bck;
+                carreBtn.style.backgroundColor = ""
+                
+            })
         })
 
-        carreBleu.addEventListener('click',function(){
-            const carreProp = window.getComputedStyle(carreBleu,null)
-            const carreBKC = carreProp.getPropertyValue("background-color");
-            carreInitial.innerText=carreBKC;
-            carreInitial.classList.add("backgroundBleu");
-            
-        })
+ 
 
-        carreViolet.addEventListener('click',function(){
-            const carreProp = window.getComputedStyle(carreViolet,null)
-            const carreBKC = carreProp.getPropertyValue("background-color");
-            carreInitial.innerText=carreBKC;
-            carreInitial.classList.add("backgroundViolet");
-        })
+    
 
         
     
