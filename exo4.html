@@ -5,55 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <title>Exercice 4</title>
 </head>
 <body>
     <div class="wrapperExo4">
         <div id="text">Follow us!</div>
             <div class="iElements">
-                <div class="container darkBlue"><i class="fa-brands fa-facebook"></i><p class="brandName">Facebook</p></div>
-                <div class="container clearBlue"><i class="fa-brands fa-twitter"></i><p class="brandName">Twitter</p></div>
-                <div class="container red"><i class="fa-brands fa-instagram"></i><p class="brandName">Instagram</p></div>
+                <div class="container facebook"><i class="fa-brands fa-facebook"></i></div>
+                <div class="container twitter"><i class="fa-brands fa-twitter"></i></div>
+                <div class="container instagram"><i class="fa-brands fa-instagram"></i></div>
             </div>
     </div>
 
     <script>
         const icones = document.querySelectorAll(".container")
-        console.log(icones)
-
-        const brandNames = document.querySelectorAll(".brandName")
- 
+        const wrapper = document.querySelector(".wrapperExo4")
 
         icones.forEach(icone => {
-            addEventListener('click',function(){
-                // const wrapper = document.querySelector(".wrapperExo4")
-                // const styles = window.getComputedStyle(icone,null)
-                // const backgroundColor = styles.getPropertyValue("background-color")
-                // wrapper.classList.add("background-color")
-
+            icone.addEventListener('click',function(){
                 if(icone.classList.contains("active")){
                     icone.classList.remove("active")
-                    // brandName.style.display="none"
+                    wrapper.style.backgroundColor = "rgb(203, 203, 214)"
                 }else{
                     icone.classList.add("active")
-                    // brandName.style.display="block"
+                    wrapper.style.backgroundColor = "rgb(93, 85, 181)"
                 }
             })
         });
-
-  
-      
-
-        brandNames.forEach(brandName=>{
-            addEventListener('click',function(){
-                if(brandName.style.display==="none"){
-                    brandName.style.display="block"
-                }else{
-                    brandName.style.display="none"
-                }
-            })
-        })
-
     </script>
 </body>
 </html>
