@@ -12,29 +12,38 @@
 </head>
 <body>
     <div class="wrapperExo4">
-        <div id="text">Follow us!</div>
-            <div class="iElements">
-                <div class="container facebook"><i class="fa-brands fa-facebook"></i></div>
-                <div class="container twitter"><i class="fa-brands fa-twitter"></i></div>
-                <div class="container instagram"><i class="fa-brands fa-instagram"></i></div>
+        <div id="followUs">Follow us!</div>
+            <div class="iElementsWrapper">
+                <div class="container facebook"><i class="fa-brands fa-facebook"></i><p class="brand">facebook</p></div>
+                <div class="container twitter"><i class="fa-brands fa-twitter"></i><p class="brand">twitter</p></div>
+                <div class="container instagram"><i class="fa-brands fa-instagram"></i><p class="brand">instagram</p></div>
             </div>
     </div>
 
     <script>
         const icones = document.querySelectorAll(".container")
         const wrapper = document.querySelector(".wrapperExo4")
+        const brand = document.querySelector(".brand")
+        const brands = document.querySelectorAll(".brand")
 
         icones.forEach(icone => {
             icone.addEventListener('click',function(){
                 if(icone.classList.contains("active")){
                     icone.classList.remove("active")
                     wrapper.style.backgroundColor = "rgb(203, 203, 214)"
+                    brand.style.display = "none";
+                    
                 }else{
                     icone.classList.add("active")
                     wrapper.style.backgroundColor = "rgb(93, 85, 181)"
+                    brand.style.display = "inline";
+                 
                 }
             })
         });
     </script>
 </body>
 </html>
+
+
+
