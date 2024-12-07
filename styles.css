@@ -145,7 +145,7 @@ i{
 /* EXERCICE 5 */
 
 body{
-    background-color: rgb(214, 213, 213);
+    background-color: rgb(226, 225, 225);
 }
 
 #wrapperExo5{
@@ -176,4 +176,18 @@ body{
     font-size:16px;
     text-align: end;
     margin:20px auto 0px auto;
+}
+
+.fa-star{
+    color:rgb(255, 234, 0);
+    margin:0px;
+}
+
+.favoris{
+    display:flex;
+    align-items: baseline;
+    justify-content: flex-end;
+    margin:0px 0px 20px 0px;
+    font-family: "Nunito", sans-serif;
+    font-size: 12px;
 }

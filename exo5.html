@@ -3,53 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <!-- STYLES SHEET -->
     <link rel="stylesheet" href="styles.css">
+    <!-- CDN  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="quote.js"></script>
     <title>Exercice 5</title>
 </head>
 <body>
     <div id="wrapperExo5">
         <div class="conteneurExo5">
+            <div class="favoris">ajouter aux favoris<i class="fa-regular fa-star"></i></div>
             <div class="citation">Exemple</div>
             <div class="auteur">Exemple</div>
         </div>
         <div class="conteneurExo5">
+            <div class="favoris">ajouter aux favoris<i class="fa-regular fa-star"></i></div>
             <div class="citation">Exemple</div>
             <div class="auteur">Exemple</div>
         </div>
         <div class="conteneurExo5">
+            <div class="favoris">ajouter aux favoris<i class="fa-regular fa-star"></i></div>
             <div class="citation">Exemple</div>
             <div class="auteur">Exemple</div>
         </div>
         <div class="conteneurExo5">
+            <div class="favoris">ajouter aux favoris<i class="fa-regular fa-star"></i></div>
             <div class="citation">Exemple</div>
             <div class="auteur">Exemple</div>
         </div>
         <div class="conteneurExo5">
+            <div class="favoris">ajouter aux favoris<i class="fa-regular fa-star"></i></div>
             <div class="citation">Exemple</div>
             <div class="auteur">Exemple</div>
         </div>
     </div>
 
     <script>
-        console.log(quotes)
-        console.log(quotes["Serges Karamazov"]) 
-        console.log(Object.keys(quotes))
-        console.log(Object.values(quotes))
+        //TESTS
+        console.log(quotes);
+        console.log(quotes["Serges Karamazov"]);
+        console.log(Object.keys(quotes));
+        console.log(Object.values(quotes));
+
+        //RECUPERATION DES ELEMENTS PERTINENTS
+        const auteurs = document.querySelectorAll(".auteur");
+        const citations = document.querySelectorAll(".citation");
+        const etoiles = document.querySelectorAll(".fa-star")
 
 
-        const conteneurs = document.querySelectorAll(".conteneurExo5")
-        const auteurs = document.querySelectorAll(".auteur")
-        const citations = document.querySelectorAll(".citation")
-
+        //AFFICHAGE DES CITATIONS
         citations.forEach((citation,index) => {
             citation.innerText = Object.values(quotes)[index]
         });
         
+        //AFFICHAGE DES AUTEURS 
         auteurs.forEach((auteur,index) => {
             auteur.innerText=Object.keys(quotes)[index]
         });
         
+        //SYSTEME DE FAVORIS
+        etoiles.forEach(etoile => {
+            etoile.addEventListener('click',function(){
+                
+            })
+        });
+
+
+
     
 
     
