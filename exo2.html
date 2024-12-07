@@ -24,27 +24,16 @@
 
         const carres = document.querySelectorAll(".carreEx2");
         const carreBtn = document.querySelector(".carreBtnEx2");
-        // const carreBleu = document.querySelector(".bleubck");
-        // const carreRouge = document.querySelector(".rougebck");
-        // const carreVert = document.querySelector(".vertbck");
-        // const carreJaune = document.querySelector(".yellowbck");
      
         carres.forEach(carre => {
-            carre.addEventListener('click',function(){
-                const proprietes = window.getComputedStyle(carre,null);
-                const bck = proprietes.getPropertyValue("background-color");
-                carreBtn.innerText=bck;
-                carreBtn.style.backgroundColor = ""
-                
+            const proprietes = window.getComputedStyle(carre,null);
+            const bck = proprietes.getPropertyValue("background-color");
+                carre.addEventListener('click',function(){
+                    carreBtn.classList.remove("neutre")
+                    carreBtn.style.backgroundColor=bck;
+                    carreBtn.innerText=bck;
             })
         })
-
- 
-
-    
-
-        
-    
 
     </script>
 </body>

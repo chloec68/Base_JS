@@ -39,6 +39,11 @@
 .carreBtnEx2{
     width:80px;
     height:80px;
+    
+}
+
+.neutre{
+    background-color: antiquewhite;
 }
 
 .rougebck{
@@ -55,10 +60,6 @@
 
 .yellowbck{
     background-color: yellow;
-}
-
-.neutre{
-    background-color: antiquewhite;
 }
 
 /* EXERCICE 3 */
