@@ -36,16 +36,16 @@
                 if(icone.classList.contains("active")){
                     icone.classList.remove("active")
                     wrapper.style.backgroundColor = "rgb(203, 203, 214)"
-
+                    // ici j'ajoute un nom de classe, afin de manipuler l'affichage (.brand.{display : none}) depuis mon fichier CSS 
                     brand.classList.remove("clicked")
-                    console.log(brand)
+                   
                     
                 }else{
                     icone.classList.add("active")
                     wrapper.style.backgroundColor = "rgb(93, 85, 181)"
-
+                    //(.brand.clicked{display:block})
                     brand.classList.add("clicked")
-                    console.log(brand)
+              
                 }
             })
         })

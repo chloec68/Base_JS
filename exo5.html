@@ -72,9 +72,12 @@
         
                 etoile.addEventListener('click',function(){
 
-                    const conteneur = event.currentTarget.closest('.conteneurExo5')
-                    const citation = conteneur.querySelector('.citation').textContent 
-                    const auteur = conteneur.querySelector('.auteur').textContent
+                    // const conteneur = event.currentTarget.closest('.conteneurExo5')
+                    // const citation = conteneur.querySelector('.citation').textContent 
+                    // const auteur = conteneur.querySelector('.auteur').textContent
+                    
+                    const citation = event.currentTarget.closest(".citation").textContent
+                    const auteur = conteneur.currentTarget.closest(".auteur")
 
                         if(etoile.classList.contains("fa-regular")){
                             etoile.classList.remove("fa-regular");
