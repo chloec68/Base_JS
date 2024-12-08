@@ -110,6 +110,11 @@ i{
 .brand{
     color:white;
     margin:5px auto auto auto;
+    display: none;
+}
+
+.brand.clicked{
+    display: block;
 }
 
 .facebook{

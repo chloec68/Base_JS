@@ -28,6 +28,9 @@
 
         icones.forEach(icone => {
             icone.addEventListener('click',function(){
+
+                const brand = icone.querySelector(".brand")
+
                 if(icone.classList.contains("active")){
                     icone.classList.remove("active")
                     wrapper.style.backgroundColor = "rgb(203, 203, 214)"
@@ -45,13 +48,6 @@
             })
         })
 
-        brands.forEach(brand => {
-            if(brand.classList.contains("clicked")){
-                brand.style.display = "block";
-            }else{
-                brand.style.display = "none";
-            }
-        });
     </script>
 </body>
 </html>
