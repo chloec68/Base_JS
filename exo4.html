@@ -29,6 +29,8 @@
         icones.forEach(icone => {
             icone.addEventListener('click',function(){
 
+                // la ligne ci dessous permet d'affecter à la constante brand, la marque correspondante à l'icone cliquée 
+                //permet d'effectuer la sélection / individualisation de l'élément 
                 const brand = icone.querySelector(".brand")
 
                 if(icone.classList.contains("active")){
