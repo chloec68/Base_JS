@@ -17,38 +17,39 @@
 <body>
     <div id="wrapperExo5">
         <div class="conteneurExo5">
-            <div class="favoris">ajouter aux favoris<i class="fa-regular fa-star"></i></div>
-            <div class="citation">Exemple</div>
-            <div class="auteur">Exemple</div>
+            <div class="favoris"><i class="fa-regular fa-star"></i>ajouter aux favoris</div>
+            <div class="citation"></div>
+            <div class="auteur"></div>
         </div>
         <div class="conteneurExo5">
-            <div class="favoris">ajouter aux favoris<i class="fa-regular fa-star"></i></div>
-            <div class="citation">Exemple</div>
-            <div class="auteur">Exemple</div>
+            <div class="favoris"><i class="fa-regular fa-star"></i>ajouter aux favoris</div>
+            <div class="citation"></div>
+            <div class="auteur"></div>
         </div>
         <div class="conteneurExo5">
-            <div class="favoris">ajouter aux favoris<i class="fa-regular fa-star"></i></div>
-            <div class="citation">Exemple</div>
-            <div class="auteur">Exemple</div>
+            <div class="favoris"><i class="fa-regular fa-star"></i>ajouter aux favoris</div>
+            <div class="citation"></div>
+            <div class="auteur"></div>
         </div>
         <div class="conteneurExo5">
-            <div class="favoris">ajouter aux favoris<i class="fa-regular fa-star"></i></div>
-            <div class="citation">Exemple</div>
-            <div class="auteur">Exemple</div>
+            <div class="favoris"><i class="fa-regular fa-star"></i>ajouter aux favoris</div>
+            <div class="citation"></div>
+            <div class="auteur"></div>
         </div>
         <div class="conteneurExo5">
-            <div class="favoris">ajouter aux favoris<i class="fa-regular fa-star"></i></div>
-            <div class="citation">Exemple</div>
-            <div class="auteur">Exemple</div>
+            <div class="favoris"><i class="fa-regular fa-star"></i>ajouter aux favoris</div>
+            <div class="citation"></div>
+            <div class="auteur"></div>
         </div>
     </div>
 
     <script>
         //TESTS
-        console.log(quotes);
-        console.log(quotes["Serges Karamazov"]);
-        console.log(Object.keys(quotes));
-        console.log(Object.values(quotes));
+        console.log(quotes); // OBJECT
+        console.log(quotes["Serges Karamazov"]); // STRING
+        console.log(Object.keys(quotes)); // ARRAY ["author","author"]
+        console.log(Object.values(quotes)); // ARRAY ["quotes",'quotes'] 
+        
 
         //RECUPERATION DES ELEMENTS PERTINENTS
         const auteurs = document.querySelectorAll(".auteur");
@@ -68,27 +69,74 @@
         
         //SYSTEME DE FAVORIS
         etoiles.forEach(etoile => {
-            etoile.addEventListener('click',function(){
-                if(etoile.classList.contains("fa-regular")){
-                    etoile.classList.remove("fa-regular");
-                    etoile.classList.add("fa-solid");
-                    etoile.style.color="rgb(255, 234, 0)";
-                }else{
-                    etoile.classList.add("fa-regular");
-                    etoile.classList.remove("fa-solid")
-                    etoile.style.color="rgb(161, 159, 155)";
-                }
-            })
+        
+                etoile.addEventListener('click',function(){
+
+                    const conteneur = event.currentTarget.closest('.conteneurExo5')
+                    const citation = conteneur.querySelector('.citation').textContent 
+                    const auteur = conteneur.querySelector('.auteur').textContent
+
+                        if(etoile.classList.contains("fa-regular")){
+                            etoile.classList.remove("fa-regular");
+                            etoile.classList.add("fa-solid");
+                            etoile.style.color="rgb(255, 234, 0)";
+
+                        
+                        console.log(auteur,citation)
+                        localStorage.setItem(auteur,citation)
+                 
+        
+                
+                        }else{
+                            etoile.classList.add("fa-regular");
+                            etoile.classList.remove("fa-solid")
+                            etoile.style.color="rgb(161, 159, 155)";
+
+                            localStorage.removeItem(auteur,citation)
+                  
+                        }
+                })
         })
 
 
-
+        // STOCKAGE DES FAVORIS DANS LE STOCKAGE LOCAL 
     
+     
+  
 
+
+
+
+
+        // console.log(document.querySelector(".citation").nextSibling)
+        // console.log(document.querySelector(".citation").parentNode)
+        // console.log(document.querySelector(".citation").textContent)
+        // console.log(document.querySelector(".auteur").textContent)
+
+
+        //localStorage.setItem(key,value)
+
+        // L'interface Storage de l'API Web Storage donne accès au stockage de session (sessionStorage) ou au stockage local (localStorage)
+
+        // window.localStorage => permet de manipuler le stockage local pour un domaine 
+        // localStorage.length => renvoie un entier représentant le nombre d'élément contenu dans l'objet Storage
+        // localStorage.key(index) => renvoie le nom de la n-ième clé dans le stockage = permet de récupérer clé correspond à l'index spécifié
+        // localStorage.getItem(key) => lorsqu'on lui passe le nom d'une clé, cette méthode renvoie la valeur de la clé correspondante ; si la clé n'existe pas, elle retourne
+        //null
+        // localStorage.setItem(key,value) = lorsqu'on lui passe le nom d'une clé et une valeur, cette méthode ajoute la clé et valeur dans le stockage. Si la clé existe déjà, elle met 
+        // la valeur à jour - la clé et la valeur doivent être des chaînes de caractères
+        // storage.removeItem(key)=> lorsqu'on lui passe un nom de clé, cette méthode supprime la clé du stockage
+        // storage.clear() => supprime toutes les clés du stockage
+
+        // NB : les clés et valeurs sont toujours des chaînes de caractères
+
+        // NB : localStorage ne peut stocker que des chaînes de caractères -> si on veut stocker des objets ou tableaux, il fait les sérialiser avec JSON.stringify()
+        // avant de les stocker et les désérialiser avec JSON.parse() lors de la récupération
+        
+  
     
     
-
-
+        
 
 
 
