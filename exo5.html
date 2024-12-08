@@ -84,6 +84,7 @@
                         
                         console.log(auteur,citation)
                         localStorage.setItem(auteur,citation)
+                        console.log(localStorage)
                  
         
                 
@@ -92,8 +93,8 @@
                             etoile.classList.remove("fa-solid")
                             etoile.style.color="rgb(161, 159, 155)";
 
-                            localStorage.removeItem(auteur,citation)
-                  
+                            localStorage.removeItem(auteur)
+                            console.log(localStorage)
                         }
                 })
         })
