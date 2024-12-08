@@ -79,17 +79,18 @@
                     const conteneur = event.currentTarget.closest('.conteneurExo5') //OBJECT
                     const citation = conteneur.querySelector('.citation').textContent //STRING
                     const auteur = conteneur.querySelector('.auteur').textContent //STRING
+                    // const favoris = [];
 
                         if(etoile.classList.contains("fa-regular")){
                             etoile.classList.remove("fa-regular");
                             etoile.classList.add("fa-solid");
                             etoile.style.color="rgb(255, 234, 0)";
                         
-                            // console.log(auteur,citation)
-                            const favoris = [];
-                            favoris.push(auteur,citation)
-                            localStorage.setItem("favoris",favoris)
-                            console.log(favoris)
+                            // favoris.forEach(element => {
+                            //     favoris.push(auteur,citation)
+                            //     localStorage.setItem("favoris",favoris)
+                                
+                            // });
                           
                         }else{
                             etoile.classList.add("fa-regular");
@@ -103,7 +104,8 @@
 
         //AFFICHAGE DES FAVORIS 
 
-        console.log(localStorage.getItem("favoris"))
+
+        // console.log(localStorage.getItem("favoris"))
     
 
 
