@@ -45,10 +45,10 @@
 
     <script>
         //TESTS
-        console.log(quotes); // OBJECT
-        console.log(quotes["Serges Karamazov"]); // STRING
-        console.log(Object.keys(quotes)); // ARRAY ["author","author"]
-        console.log(Object.values(quotes)); // ARRAY ["quotes",'quotes'] 
+        // console.log(quotes); // OBJECT
+        // console.log(quotes["Serges Karamazov"]); // STRING
+        // console.log(Object.keys(quotes)); // ARRAY ["author","author"]
+        // console.log(Object.values(quotes)); // ARRAY ["quotes",'quotes'] 
         // console.log(document.querySelector(".citation").nextSibling)
         // console.log(document.querySelector(".citation").parentNode)
         // console.log(document.querySelector(".citation").textContent)
@@ -76,32 +76,35 @@
         
                 etoile.addEventListener('click',function(){
 
-                    const conteneur = event.currentTarget.closest('.conteneurExo5')
-                    const citation = conteneur.querySelector('.citation').textContent 
-                    const auteur = conteneur.querySelector('.auteur').textContent
+                    const conteneur = event.currentTarget.closest('.conteneurExo5') //OBJECT
+                    const citation = conteneur.querySelector('.citation').textContent //STRING
+                    const auteur = conteneur.querySelector('.auteur').textContent //STRING
 
                         if(etoile.classList.contains("fa-regular")){
                             etoile.classList.remove("fa-regular");
                             etoile.classList.add("fa-solid");
                             etoile.style.color="rgb(255, 234, 0)";
-
                         
-                        console.log(auteur,citation)
-                        localStorage.setItem(auteur,citation)
-                        console.log(localStorage)
-                 
-        
-                
+                            // console.log(auteur,citation)
+                            const favoris = [];
+                            favoris.push(auteur,citation)
+                            localStorage.setItem("favoris",favoris)
+                            console.log(favoris)
+                          
                         }else{
                             etoile.classList.add("fa-regular");
                             etoile.classList.remove("fa-solid")
                             etoile.style.color="rgb(161, 159, 155)";
 
-                            localStorage.removeItem(auteur)
-                            console.log(localStorage)
+                            localStorage.removeItem("favoris")
                         }
                 })
         })
+
+        //AFFICHAGE DES FAVORIS 
+
+        console.log(localStorage.getItem("favoris"))
+    
 
 
     
