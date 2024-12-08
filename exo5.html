@@ -49,6 +49,10 @@
         console.log(quotes["Serges Karamazov"]); // STRING
         console.log(Object.keys(quotes)); // ARRAY ["author","author"]
         console.log(Object.values(quotes)); // ARRAY ["quotes",'quotes'] 
+        // console.log(document.querySelector(".citation").nextSibling)
+        // console.log(document.querySelector(".citation").parentNode)
+        // console.log(document.querySelector(".citation").textContent)
+        // console.log(document.querySelector(".auteur").textContent)
         
 
         //RECUPERATION DES ELEMENTS PERTINENTS
@@ -72,12 +76,9 @@
         
                 etoile.addEventListener('click',function(){
 
-                    // const conteneur = event.currentTarget.closest('.conteneurExo5')
-                    // const citation = conteneur.querySelector('.citation').textContent 
-                    // const auteur = conteneur.querySelector('.auteur').textContent
-                    
-                    const citation = event.currentTarget.closest(".citation").textContent
-                    const auteur = conteneur.currentTarget.closest(".auteur")
+                    const conteneur = event.currentTarget.closest('.conteneurExo5')
+                    const citation = conteneur.querySelector('.citation').textContent 
+                    const auteur = conteneur.querySelector('.auteur').textContent
 
                         if(etoile.classList.contains("fa-regular")){
                             etoile.classList.remove("fa-regular");
@@ -103,7 +104,6 @@
         })
 
 
-        // STOCKAGE DES FAVORIS DANS LE STOCKAGE LOCAL 
     
      
   
@@ -112,10 +112,7 @@
 
 
 
-        // console.log(document.querySelector(".citation").nextSibling)
-        // console.log(document.querySelector(".citation").parentNode)
-        // console.log(document.querySelector(".citation").textContent)
-        // console.log(document.querySelector(".auteur").textContent)
+
 
 
         //localStorage.setItem(key,value)
