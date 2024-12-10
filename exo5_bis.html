@@ -41,9 +41,11 @@
             authorDiv.classList.add("auteur");
 
             // TRADUCTION DE LA CLE DE L'OBJET EN CHAINE DE CARACTERES 
-            let author = JSON.stringify(element);
+            let author = element;
+            // let author = JSON.stringify(element); => pour ajouter des guillemets
             // TRADUCTION DE LA VALEUR DE L'OBJET EN CHAINE DE CARACTERES 
-            let quote = JSON.stringify(quotes[element]);
+            let quote = quotes[element];
+            // let quote = JSON.stringify(quotes[element]); => pour ajouter des guillemets
 
             // AJOUT NOM DE L'AUTEUR A SA DIV 
             authorDiv.innerText=author;
@@ -58,17 +60,22 @@
 
             let etoile = document.createElement("i");
             divFavoris.appendChild(etoile);
-            etoile.classList.add("fa-star","fa-regular")
+            etoile.classList.add("fa-star","fa-regular");
 
             etoile.addEventListener('click',function(){
-
+                
                 if(etoile.classList.contains("fa-solid")){
-                    etoile.classList.remove("fa-solid")
+                    etoile.classList.remove("fa-solid");
+                    window.localStorage.removeItem(author,quote)
                 }else{
-                    etoile.classList.add("fa-solid")
+                    etoile.classList.add("fa-solid");
                     etoile.style.color="rgb(255, 234, 0)";
+                    let favoris = JSON.stringify(window.localStorage.setItem(author,quote));
                 }
+
             })
+
+          
 
 
 
