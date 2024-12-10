@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SCRIPT -->
+    <script src="quote.js"></script>
+    <!-- STYLES -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- TITLE -->
+    <title>Exercice 5 BIS</title>
+</head>
+
+<body>
+    
+    <div class="wrapperExo5Bis"></div>
+
+    <script>
+
+        // CREATION D'UNE BOUCLE POUR ITERER DANS L'OBJET "QUOTES" 
+        for (const element in quotes){
+
+            // RECUPERATION WRAPPER
+            let wrapper = document.querySelector(".wrapperExo5Bis");
+            
+            // CREATION CARTE + AJOUT A L'ELEMENT PARENT (WRAPPER) + AJOUT STYLES 
+            let container = document.createElement("div");
+            wrapper.appendChild(container); 
+            container.classList.add("conteneurExo5");
+
+            // CREATION D'UNE DIV POUR LA CITATION + AJOUT DE LA DIV A ELEMENT PARENT + AJOUT STYLES 
+            let quoteDiv = document.createElement("div");
+            container.appendChild(quoteDiv);
+            quoteDiv.classList.add("citation");
+            
+            // CREATION D'UNE DIV POUR L'AUTEUR + AJOUT DE LA DIV A ELEMENT PARENT + AJOUT STYLES 
+            let authorDiv = document.createElement("div");
+            container.appendChild(authorDiv);
+            authorDiv.classList.add("auteur");
+
+            // TRADUCTION DE LA CLE DE L'OBJET EN CHAINE DE CARACTERES 
+            let author = JSON.stringify(element);
+            // TRADUCTION DE LA VALEUR DE L'OBJET EN CHAINE DE CARACTERES 
+            let quote = JSON.stringify(quotes[element]);
+
+            // AJOUT NOM DE L'AUTEUR A SA DIV 
+            authorDiv.innerText=author;
+            // AJOUT CITATION A SA DIV 
+            quoteDiv.innerText=quote;
+
+            // FAVORIS
+            let divFavoris = document.createElement("div"); 
+            container.appendChild(divFavoris);
+            divFavoris.innerText = "Ajouter au favoris"
+            divFavoris.classList.add("favorisBis")
+
+            let etoile = document.createElement("i");
+            divFavoris.appendChild(etoile);
+            etoile.classList.add("fa-star","fa-regular")
+
+            etoile.addEventListener('click',function(){
+
+                if(etoile.classList.contains("fa-solid")){
+                    etoile.classList.remove("fa-solid")
+                }else{
+                    etoile.classList.add("fa-solid")
+                    etoile.style.color="rgb(255, 234, 0)";
+                }
+            })
+
+
+
+            //TESTS
+            // console.log(element) // key (auteur)
+            // console.log(element) // entire object 
+            // console.log(quotes[element]) // value (quote)
+        }
+
+        
+        
+    </script>
+</body>
+</html>

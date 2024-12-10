@@ -156,6 +156,10 @@ body{
     display:block;
 }
 
+.wrapperExo5Bis{
+    display:block;
+}
+
 .conteneurExo5{
     height : 100px; 
     width: fit-content;
@@ -192,6 +196,15 @@ body{
     align-items: baseline;
     justify-content: flex-start;
     margin:0px 0px 20px 0px;
+    font-family: "Nunito", sans-serif;
+    font-size: 12px;
+}
+
+.favorisBis{
+    display:flex;
+    align-items: baseline;
+    justify-content: flex-start;
+    margin:20px 0px 0px 0px;
     font-family: "Nunito", sans-serif;
     font-size: 12px;
 }
