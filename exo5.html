@@ -73,7 +73,6 @@
         
         //SYSTEME DE FAVORIS
 
-        const favoris = []
 
         etoiles.forEach(etoile => {
 
@@ -87,27 +86,20 @@
                             etoile.classList.remove("fa-regular");
                             etoile.classList.add("fa-solid");
                             etoile.style.color="rgb(255, 234, 0)";
-
-                            favoris.push(citation + auteur)
-                            console.log(favoris)
-                            window.localStorage.setItem("favoris",JSON.stringify(favoris))
-                          
+                            window.localStorage.setItem(auteur,citation)
                          
                         }else{
                             etoile.classList.add("fa-regular");
                             etoile.classList.remove("fa-solid")
                             etoile.style.color="rgb(161, 159, 155)";
-
-                            favoris.pop(citation + auteur)
-                            console.log(favoris)
-                            window.localStorage.setItem("favoris",JSON.stringify(favoris))
-                    
+                            window.localStorage.removeItem(auteur,citation)
                         }
                 })
         })
         
         const showFavoris = window.localStorage.getItem("favoris");
-        console.log(showFavoris)
+        window.localStorage.clear()
+     
 
    
 
@@ -131,13 +123,6 @@
         // NB : localStorage ne peut stocker que des chaînes de caractères -> si on veut stocker des objets ou tableaux, il fait les sérialiser avec JSON.stringify()
         // avant de les stocker et les désérialiser avec JSON.parse() lors de la récupération
         
-  
-    
-    
-        
-
-
-
 
 
     </script>
