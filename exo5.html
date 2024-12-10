@@ -72,52 +72,44 @@
         })
         
         //SYSTEME DE FAVORIS
+
+        const favoris = []
+
         etoiles.forEach(etoile => {
-        
+
                 etoile.addEventListener('click',function(){
 
                     const conteneur = event.currentTarget.closest('.conteneurExo5') //OBJECT
                     const citation = conteneur.querySelector('.citation').textContent //STRING
                     const auteur = conteneur.querySelector('.auteur').textContent //STRING
-                
 
                         if(etoile.classList.contains("fa-regular")){
                             etoile.classList.remove("fa-regular");
                             etoile.classList.add("fa-solid");
                             etoile.style.color="rgb(255, 234, 0)";
-                            
-                            // console.log(citation)
-                            window.localStorage.setItem("favoris",citation)
-                            window.localStorage.getItem("favoris")
-                            console.log(localStorage)
-                         
+
+                            favoris.push(citation + auteur)
+                            console.log(favoris)
+                            window.localStorage.setItem("favoris",JSON.stringify(favoris))
                           
+                         
                         }else{
                             etoile.classList.add("fa-regular");
                             etoile.classList.remove("fa-solid")
                             etoile.style.color="rgb(161, 159, 155)";
 
-                            window.localStorage.removeItem("favoris")
+                            favoris.pop(citation + auteur)
+                            console.log(favoris)
+                            window.localStorage.setItem("favoris",JSON.stringify(favoris))
+                    
                         }
                 })
         })
-
-        window.localStorage.setItem("test","hello"); const test = window.localStorage.getItem("test"); console.log(test)
-
         
+        const showFavoris = window.localStorage.getItem("favoris");
+        console.log(showFavoris)
+
    
-    
-
-
-    
-     
-  
-
-
-
-
-
-
 
 
         //localStorage.setItem(key,value)
