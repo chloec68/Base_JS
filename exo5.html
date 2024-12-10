@@ -79,33 +79,33 @@
                     const conteneur = event.currentTarget.closest('.conteneurExo5') //OBJECT
                     const citation = conteneur.querySelector('.citation').textContent //STRING
                     const auteur = conteneur.querySelector('.auteur').textContent //STRING
-                    // const favoris = [];
+                
 
                         if(etoile.classList.contains("fa-regular")){
                             etoile.classList.remove("fa-regular");
                             etoile.classList.add("fa-solid");
                             etoile.style.color="rgb(255, 234, 0)";
-                        
-                            // favoris.forEach(element => {
-                            //     favoris.push(auteur,citation)
-                            //     localStorage.setItem("favoris",favoris)
-                                
-                            // });
+                            
+                            // console.log(citation)
+                            window.localStorage.setItem("favoris",citation)
+                            window.localStorage.getItem("favoris")
+                            console.log(localStorage)
+                         
                           
                         }else{
                             etoile.classList.add("fa-regular");
                             etoile.classList.remove("fa-solid")
                             etoile.style.color="rgb(161, 159, 155)";
 
-                            localStorage.removeItem("favoris")
+                            window.localStorage.removeItem("favoris")
                         }
                 })
         })
 
-        //AFFICHAGE DES FAVORIS 
+        window.localStorage.setItem("test","hello"); const test = window.localStorage.getItem("test"); console.log(test)
 
-
-        // console.log(localStorage.getItem("favoris"))
+        
+   
     
 
 
