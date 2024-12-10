@@ -85,20 +85,18 @@
                         if(etoile.classList.contains("fa-regular")){
                             etoile.classList.remove("fa-regular");
                             etoile.classList.add("fa-solid");
-                            etoile.style.color="rgb(255, 234, 0)";
                             window.localStorage.setItem(auteur,citation)
                          
                         }else{
                             etoile.classList.add("fa-regular");
                             etoile.classList.remove("fa-solid")
-                            etoile.style.color="rgb(161, 159, 155)";
                             window.localStorage.removeItem(auteur,citation)
                         }
                 })
         })
         
-        const showFavoris = window.localStorage.getItem("favoris");
-        window.localStorage.clear()
+      
+        // window.localStorage.clear()
      
 
    
