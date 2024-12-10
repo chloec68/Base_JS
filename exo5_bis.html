@@ -62,25 +62,51 @@
             divFavoris.appendChild(etoile);
             etoile.classList.add("fa-star","fa-regular");
 
-            etoile.addEventListener('click',function(){
-                
-                if(etoile.classList.contains("fa-solid")){
+            // POUR AJOUTER AU LOCAL STORAGE SANS CONSERVER LE STYLE DE L'ETOILE 
+            // etoile.addEventListener('click',function(){
+            //     if(etoile.classList.contains("fa-solid")){
+            //         etoile.classList.remove("fa-solid");
+            //         window.localStorage.removeItem(author,quote)
+            //     }else{
+            //         etoile.classList.add("fa-solid");
+            //         etoile.style.color="rgb(255, 234, 0)";
+            //         window.localStorage.setItem(author,quote)
+            //     }
+            // })
+            
+            // POUR CONSERVER LE STYLE DE L'ETOILE TANT QUE L'ELEMENT EST PRESENT DANS LE LOCAL STORAGE
+            if(localStorage.getItem(author)==null){
+                etoile.addEventListener('click',function(){
+                    if(etoile.classList.contains("fa-solid")){
                     etoile.classList.remove("fa-solid");
                     window.localStorage.removeItem(author,quote)
-                }else{
-                    etoile.classList.add("fa-solid");
-                    etoile.style.color="rgb(255, 234, 0)";
-                    let favoris = JSON.stringify(window.localStorage.setItem(author,quote));
-                }
+                    }else{
+                        etoile.classList.add("fa-solid");
+                        etoile.style.color="rgb(255, 234, 0)";
+                        window.localStorage.setItem(author,quote)
+                    }
+                })
+            }else{
+                etoile.classList.add("fa-solid");
+                etoile.addEventListener('click',function(){
+                    if(etoile.classList.contains("fa-solid")){
+                    etoile.classList.remove("fa-solid");
+                    window.localStorage.removeItem(author,quote)
+                    }else{
+                        etoile.classList.add("fa-solid");
+                        etoile.style.color="rgb(255, 234, 0)";
+                        window.localStorage.setItem(author,quote)
+                    }
+                })
+            }
 
-            })
-
+        }
 
             //TESTS
             // console.log(element) // key (auteur)
             // console.log(element) // entire object 
             // console.log(quotes[element]) // value (quote)
-        }
+       
 
         
         
