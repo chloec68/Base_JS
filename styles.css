@@ -84,9 +84,14 @@
 }
 
 .transform{
-    transform:scale(-10%) rotate(10deg);
+    transform : scale(10%);
+    transform : rotate(360deg);
+    transition:0.9s;
     background-color: red;
+    
 }
+
+
 
 /* EXERCICE 4 */
 i{
